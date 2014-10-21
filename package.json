@@ -14,8 +14,15 @@
     "url": "https://github.com/jhermsmeier/node-dkim-key.git"
   },
   "keywords": [
+    "email",
+    "mail",
     "dkim",
-    "key"
+    "key",
+    "signature",
+    "domainkeys",
+    "domainkey",
+    "identified",
+    "message"
   ],
   "author": "Jonas Hermsmeier <jhermsmeier@gmail.com>",
   "license": "MIT",
