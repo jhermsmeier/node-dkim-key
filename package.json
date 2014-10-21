@@ -1,6 +1,6 @@
 {
   "name": "dkim-key",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "DKIM (DomainKeys Identified Mail) Key",
   "main": "lib/key",
   "directories": {
