@@ -1,0 +1,26 @@
+{
+  "name": "dkim-key",
+  "version": "1.0.0",
+  "description": "DKIM (DomainKeys Identified Mail) Key",
+  "main": "lib/key",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhermsmeier/node-dkim-key.git"
+  },
+  "keywords": [
+    "dkim",
+    "key"
+  ],
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhermsmeier/node-dkim-key/issues"
+  },
+  "homepage": "https://github.com/jhermsmeier/node-dkim-key"
+}
