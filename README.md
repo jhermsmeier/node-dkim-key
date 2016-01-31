@@ -1,11 +1,13 @@
-# DKIM (DomainKeys Identified Mail) Key
-[![build status](http://img.shields.io/travis/jhermsmeier/node-dkim-key.svg?style=flat)](http://travis-ci.org/jhermsmeier/node-dkim-key)
-[![npm](http://img.shields.io/npm/v/dkim-key.svg?style=flat)](https://npmjs.org/dkim-key)
-![downloads](http://img.shields.io/npm/dm/dkim-key.svg?style=flat)
+# dkim-key
+[![npm](https://img.shields.io/npm/v/dkim-key.svg?style=flat-square)](https://npmjs.com/dkim-key)
+[![npm](https://img.shields.io/npm/l/dkim-key.svg?style=flat-square)](https://npmjs.com/dkim-key)
+[![npm downloads](https://img.shields.io/npm/dm/dkim-key.svg?style=flat-square)](https://npmjs.com/dkim-key)
+[![build status](https://img.shields.io/travis/jhermsmeier/node-dkim-key.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-dkim-key)
 
-## Install with [npm](//npmjs.org)
-```
-npm install dkim-key
+## Install via [npm](https://npmjs.com)
+
+```sh
+$ npm install dkim-key
 ```
 
 ## Usage
