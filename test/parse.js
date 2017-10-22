@@ -10,6 +10,7 @@ suite( 'DKIM Key', function() {
     test( 'DNS TXT Record', function() {
       var key = DKIMKey.parse( txtRecord )
       assert.ok( key )
+      assert.ok(Buffer.isBuffer(key.key))
     })
     
   })
