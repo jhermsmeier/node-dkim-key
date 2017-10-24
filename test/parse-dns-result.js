@@ -1,21 +1,20 @@
-'use strict'
-let dns = require( 'dns' )
-let DKIMKey = require( '..' )
-let assert = require( 'assert' )
+var dns = require( 'dns' )
+var DKIMKey = require( '..' )
+var assert = require( 'assert' )
 
 suite( 'DKIM Key Acceptance', function() {
   
   suite( 'Gmail ARC-Message-Signature', function() {
     
-    let selector = 'arc-20160816' 
-    let domain = 'google.com'
-    let txtDomain = `${selector}._domainkey.${domain}`
+    var selector = 'arc-20160816' 
+    var domain = 'google.com'
+    var txtDomain = selector + '._domainkey.' + domain
     
     test( 'DNS TXT Buffer Output', function(done) {
-      dns.resolveTxt(txtDomain, (err, records) => {
+      dns.resolveTxt(txtDomain, function(err, records) {
         assert.equal(err, null)
-        let txtRecord = records.join('')
-        let key = DKIMKey.parse( txtRecord )
+        var txtRecord = records.join('')
+        var key = DKIMKey.parse( txtRecord )
         assert.ok( key )
         assert.ok(Buffer.isBuffer(key.key))
         done()
@@ -26,16 +25,16 @@ suite( 'DKIM Key Acceptance', function() {
 
   suite( 'Mandrill DKIM-Signature', function() {
     
-    let selector = 'mandrill' 
-    let domain = 'mandrillapp.com'
-    let txtDomain = `${selector}._domainkey.${domain}`
+    var selector = 'mandrill' 
+    var domain = 'mandrillapp.com'
+    var txtDomain = selector + '._domainkey.' + domain
     
     test( 'DNS TXT Buffer Output', function(done) {
-      dns.resolveTxt(txtDomain, (err, records) => {
+      dns.resolveTxt(txtDomain, function(err, records) {
         assert.equal(err, null)
-        let txtRecord = records.join('')
+        var txtRecord = records.join('')
 
-        let key = DKIMKey.parse( txtRecord )
+        var key = DKIMKey.parse( txtRecord )
         assert.ok( key )
         assert.ok(Buffer.isBuffer(key.key))
         done()
