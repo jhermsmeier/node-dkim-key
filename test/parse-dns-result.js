@@ -1,3 +1,4 @@
+'use strict'
 let dns = require( 'dns' )
 let DKIMKey = require( '..' )
 let assert = require( 'assert' )
