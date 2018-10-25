@@ -17,7 +17,7 @@
   "dependencies": {},
   "devDependencies": {
     "matcha": "^0.7.0",
-    "mocha": "^4.0.1"
+    "mocha": "^5.2.0"
   },
   "scripts": {
     "test": "mocha --ui tdd",
