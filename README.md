@@ -17,11 +17,13 @@ var DKIMKey = require( 'dkim-key' )
 ```
 
 Suppose you have the content of the `xxx._domainkey.<domain>` TXT DNS record:
+
 ```
 k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1Kd87/UeJjenpabgbFwh+eBCsSTrqmwIYYvywlbhbqoo2DymndFkbjOVIPIldNs/m40KF+yzMn1skyoxcTUGCQs8g3FgD2Ap3ZB5DekAo5wMmk4wimDO+U8QzI3SD07y2+07wlNWwIt8svnxgdxGkVbbhzY8i+RQ9DpSVpPbF7ykQxtKXkv/ahW3KjViiAH+ghvvIhkx4xYSIc9oSwVmAl5OctMEeWUwg8Istjqz8BZeTWbf41fbNhte7Y+YqZOwq1Sd0DbvYAD9NOZK9vlfuac0598HY+vtSBczUiKERHv1yRbcaQtZFh5wtiRrN04BLUTD21MycBX5jYchHjPY/wIDAQAB
 ```
 
 Parse the TXT record:
+
 ```js
 var key = DKIMKey.parse( txtRecord )
 ```
@@ -40,6 +42,7 @@ var key = DKIMKey.parse( txtRecord )
 ```
 
 Or create a signature header:
+
 ```js
 var key = new DKIMKey({
   type: 'rsa',
