@@ -14,6 +14,7 @@
     "domainkey"
   ],
   "main": "lib/key.js",
+  "types": "lib/key.d.ts",
   "scripts": {
     "test": "mocha",
     "benchmark": "node benchmark"
