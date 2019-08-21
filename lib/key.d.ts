@@ -23,7 +23,7 @@ declare class Key {
   constructor(options: Partial<KeyOptions>);
 
   static create(options: KeyOptions): Key;
-  static parse(value: string): any;
+  static parse(value: string): Key;
 
   static fieldMap: {
     g: string;
