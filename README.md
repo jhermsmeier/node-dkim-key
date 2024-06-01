@@ -2,7 +2,6 @@
 [![npm](https://img.shields.io/npm/v/dkim-key.svg?style=flat-square)](https://npmjs.com/dkim-key)
 [![npm](https://img.shields.io/npm/l/dkim-key.svg?style=flat-square)](https://npmjs.com/dkim-key)
 [![npm downloads](https://img.shields.io/npm/dm/dkim-key.svg?style=flat-square)](https://npmjs.com/dkim-key)
-[![build status](https://img.shields.io/travis/jhermsmeier/node-dkim-key.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-dkim-key)
 
 ## Install via [npm](https://npmjs.com)
 
