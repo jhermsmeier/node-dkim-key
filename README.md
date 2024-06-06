@@ -1,4 +1,4 @@
-# dkim-key
+# DKIM Key
 [![npm](https://img.shields.io/npm/v/dkim-key.svg?style=flat-square)](https://npmjs.com/dkim-key)
 [![npm](https://img.shields.io/npm/l/dkim-key.svg?style=flat-square)](https://npmjs.com/dkim-key)
 [![npm downloads](https://img.shields.io/npm/dm/dkim-key.svg?style=flat-square)](https://npmjs.com/dkim-key)
@@ -12,56 +12,27 @@ $ npm install dkim-key
 ## Usage
 
 ```js
-var DKIMKey = require( 'dkim-key' )
+const DKIMKey = require( 'dkim-key' )
 ```
 
-Suppose you have the content of the `xxx._domainkey.<domain>` TXT DNS record:
-
+```js
+var txtRecord = 'v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvWyktrIL8DO/+UGvMbv7cPd/Xogpbs7pgVw8y9ldO6AAMmg8+ijENl/c7Fb1MfKM7uG3LMwAr0dVVKyM+mbkoX2k5L7lsROQr0Z9gGSpu7xrnZOa58+/pIhd2Xk/DFPpa5+TKbWodbsSZPRN8z0RY5x59jdzSclXlEyN9mEZdmOiKTsOP6A7vQxfSya9jg5N81dfNNvP7HnWejMMsKyIMrXptxOhIBuEYH67JDe98QgX14oHvGM2Uz53if/SW8MF09rYh9sp4ZsaWLIg6T343JzlbtrsGRGCDJ9JPpxRWZimtz+Up/BlKzT6sCCrBihb/Bi3pZiEBB4Ui/vruL5RCQIDAQAB;n=2048,1452627113,1468351913'
 ```
-k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1Kd87/UeJjenpabgbFwh+eBCsSTrqmwIYYvywlbhbqoo2DymndFkbjOVIPIldNs/m40KF+yzMn1skyoxcTUGCQs8g3FgD2Ap3ZB5DekAo5wMmk4wimDO+U8QzI3SD07y2+07wlNWwIt8svnxgdxGkVbbhzY8i+RQ9DpSVpPbF7ykQxtKXkv/ahW3KjViiAH+ghvvIhkx4xYSIc9oSwVmAl5OctMEeWUwg8Istjqz8BZeTWbf41fbNhte7Y+YqZOwq1Sd0DbvYAD9NOZK9vlfuac0598HY+vtSBczUiKERHv1yRbcaQtZFh5wtiRrN04BLUTD21MycBX5jYchHjPY/wIDAQAB
-```
-
-Parse the TXT record:
 
 ```js
 var key = DKIMKey.parse( txtRecord )
 ```
 
 ```js
-{
-  flags: null,
-  granularity: null,
-  hash: null,
-  key: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d ...>,
-  notes: null,
-  service: null,
+DKIMKey {
+  version: 'DKIM1',
   type: 'rsa',
-  version: null
+  hashes: undefined,
+  service: undefined,
+  flags: undefined,
+  note: '2048,1452627113,1468351913',
+  granularity: undefined,
+  data: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvWyktrIL8DO/+UGvMbv7cPd/Xogpbs7pgVw8y9ldO6AAMmg8+ijENl/c7Fb1MfKM7uG3LMwAr0dVVKyM+mbkoX2k5L7lsROQr0Z9gGSpu7xrnZOa58+/pIhd2Xk/DFPpa5+TKbWodbsSZPRN8z0RY5x59jdzSclXlEyN9mEZdmOiKTsOP6A7vQxfSya9jg5N81dfNNvP7HnWejMMsKyIMrXptxOhIBuEYH67JDe98QgX14oHvGM2Uz53if/SW8MF09rYh9sp4ZsaWLIg6T343JzlbtrsGRGCDJ9JPpxRWZimtz+Up/BlKzT6sCCrBihb/Bi3pZiEBB4Ui/vruL5RCQIDAQAB',
+  unknownTags: undefined
 }
 ```
-
-Or create a signature header:
-
-```js
-var key = new DKIMKey({
-  type: 'rsa',
-  key: <Buffer 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d ...>
-})
-```
-
-```js
-key.toString()
-```
-
-## API
-
-Constructor:
-
-- new Key( options )
-- Key.create( options )
-- Key.parse( txtRecord )
-
-Methods:
-
-- key.parse( txtRecord )
-- key.toString()
