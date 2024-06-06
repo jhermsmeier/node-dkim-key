@@ -11,18 +11,12 @@
     "key",
     "signature",
     "domainkeys",
-    "domainkey"
+    "domainkey",
+    "rfc4870",
+    "rfc4871",
+    "rfc6376"
   ],
   "main": "lib/key.js",
-  "scripts": {
-    "test": "mocha",
-    "benchmark": "node benchmark"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "mocha": "^5.2.0",
-    "nanobench": "^2.1.1"
-  },
   "homepage": "https://github.com/jhermsmeier/node-dkim-key",
   "repository": {
     "type": "git",
@@ -30,5 +24,16 @@
   },
   "bugs": {
     "url": "https://github.com/jhermsmeier/node-dkim-key/issues"
+  },
+  "scripts": {
+    "test": "control test",
+    "benchmark": "node benchmark"
+  },
+  "dependencies": {
+    "dkim-quoted-printable": "1.0.1"
+  },
+  "devDependencies": {
+    "@jhermsmeier/control": "2.0.3",
+    "nanobench": "2.1.1"
   }
 }
